@@ -1,4 +1,4 @@
-function listar() {
+function listar(cinema) {
     if (cinema.length == 0) {
       console.log("Não há nenhum Filme Agendado");
     } else {
