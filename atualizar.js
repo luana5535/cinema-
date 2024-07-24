@@ -1,16 +1,24 @@
-const prompt = require('prompt-sync')()
-
-function cadastrar(){
-    if(cinema.length == 0){
-        console.log('nao ha nenhuma sessao cadastrada ainda')
-    }else{
-        let nomeFilme = prompt('digite o nome do filme: ')
-        let data = prompt('digite a data do filme: ')
-        let hora = prompt('digite a hora do filme: ')
-        let sala = prompt('digite a sala da sessão: ')
-        cinema.push(nomeFilme, data, hora)
-        console.log('sessão cadastrada com sucesso!')
+const {listar} = require('./listar')
+function atualizar(cinema,prompt,callback){
+if(cinema.length == 0){
+    console.log('nao tem nenhuma sessao agendada')
+    callback()
+}else{
+    listar(cinema)
+    let numero = prompt('digite o numero do filme que voce quer editar: ')
+    if(numero > 0 && numero <= cinema.length){
+    let novoFilme = prompt('digite o novo nome do filme/atualize o nome do filme: ')
+    let novaData = prompt('digite a nova data: ')
+    let novoHorario = prompt('digite o novo/atualizado horario: ')
+    let novaSala = prompt('digite a nova sala: ')
+    cinema[numero -1] = {
+        nomeFilme: novoFilme,
+        data: novaData,
+        hora: novoHorario,
+        sala: novaSala
     }
+    callback()
 }
-
-module.exports = {cadastrar}
+}
+}
+module.exports = {atualizar}
