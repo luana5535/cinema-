@@ -17,6 +17,7 @@ if(cinema.length == 0){
         hora: novoHorario,
         sala: novaSala
     }
+        console.log('Atualizado com sucesso🍿🍿🍿')
     callback()
 }
 }
