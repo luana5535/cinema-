@@ -46,7 +46,8 @@
 🍿     console.log("Lista dos Filmes Agendados: "); 🍿
 🍿     cinema.forEach((cinema, index) => {          🍿
 🍿       console.log(                               🍿
-🍿`${index + 1}. Filme: ${cinema.nomeFilme}, Data: $🍿 🍿{cinema.data}, hora: ${cinema.hora} Sala: ${cinema🍿
+🍿`${index + 1}. Filme: ${cinema.nomeFilme}, Data: $🍿
+🍿{cinema.data}, hora: ${cinema.hora} Sala: ${cinema🍿
 🍿 .sala}`                                          🍿
 🍿      );                                          🍿
 🍿     });                                          🍿
@@ -68,11 +69,14 @@
 🍿    callback()                                    🍿
 🍿}else{                                            🍿
 🍿    listar(cinema)                                🍿
-🍿let numero = prompt('digite o numero do filme que 🍿 🍿voce quer editar: ')                              🍿
+🍿let numero = prompt('digite o numero do filme que 🍿
+🍿voce quer editar: ')                              🍿
 🍿    if(numero > 0 && numero <= cinema.length){    🍿
-🍿    let novoFilme = prompt('digite o novo nome do 🍿 🍿filme/atualize o nome do filme: ')                🍿
+🍿    let novoFilme = prompt('digite o novo nome do 🍿
+🍿filme/atualize o nome do filme: ')                🍿
 🍿    let novaData = prompt('digite a nova data: ') 🍿
-🍿   let novaSala = prompt('digite a nova sala: ')  🍿 🍿   cinema[numero -1] = {                          🍿
+🍿   let novaSala = prompt('digite a nova sala: ')  🍿
+🍿   cinema[numero -1] = {                          🍿
 🍿        nomeFilme: novoFilme,                     🍿
 🍿        data: novaData,                           🍿
 🍿        hora: novoHorario,                        🍿
@@ -94,7 +98,8 @@
 🍿                                                  🍿
 🍿function cancelar(prompt,cinema,callback) {       🍿
 🍿    listar(cinema)                                🍿
-🍿   let resp = prompt('Digite o numero do Filme que🍿 🍿quer Cancelar: ')                                 🍿
+🍿   let resp = prompt('Digite o numero do Filme que🍿
+🍿quer Cancelar: ')                                 🍿
 🍿      if (resp > 0 && resp <= cinema.length) {    🍿
 🍿        cinema.splice(resp - 1, 1);               🍿
 🍿    console.log("Filme cancelado com sucesso!");  🍿
