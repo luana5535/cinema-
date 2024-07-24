@@ -7,7 +7,7 @@ function cadastrar(cinema,prompt,callback){
         let hora = prompt('digite a hora do filme 👉 ')
         let sala = prompt('digite a sala da sessão 👉 ')
         cinema.push({nomeFilme: nomeFilme, data: data, hora: hora, sala: sala})
-        console.log('sessão cadastrada com sucesso!')
+        console.log('sessão cadastrada com sucesso!🍿🍿🍿🍿')
         callback()
     }
 
