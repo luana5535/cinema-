@@ -5,7 +5,7 @@ function listar(cinema) {
       console.log("Lista dos Filmes Agendados 🍿🍿🍿 ");
       cinema.forEach((cinema, index) => {
         console.log(
-          `${index + 1}. Filme: ${cinema.nomeFilme}, Data: ${cinema.data}, hora: ${cinema.hora} Sala: ${cinema.sala}`
+          `${index + 1}. Filme🍿: ${cinema.nomeFilme}, Data: ${cinema.data}, hora: ${cinema.hora} Sala: ${cinema.sala}`
         );
       });
     }
