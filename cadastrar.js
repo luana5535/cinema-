@@ -1,6 +1,11 @@
-const prompt = require ('prompt-sync') ()
+const prompt = require ('prompt-sync')()
 
-let sessoes = []
+const {listar} = require('./listar')
+const { cadastrar } = require('./cadastrar')
+const { atualizar } = require('./atualizar')
+const {cancelar} = require('./cancelar')
+
+let cinema = []
 
 exibirMenu()
 function exibirMenu() {
@@ -12,28 +17,27 @@ function exibirMenu() {
     🍿 4- Cancelar uma sessão;              🍿
     🍿 5- Sair                              🍿
       🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿
-    `)
-
-    function cinema(sessoes) {
-        switch(opcão) {
+       `)
+       let opcao = prompt('escolha a opcao desejada: ')
+        switch(opcao) {
             case '1':
-                return adicionar()
+                cadastrar(cinema,prompt,exibirMenu)
                 break;
 
             case '2':
-                return listar()
+                listar(cinema)
+                exibirMenu()
                 break;
 
             case '3':
-                return atualizar() 
+                atualizar(cinema,prompt,exibirMenu) 
                 break;
 
             case '4':
-                return cancelar()
+                cancelar(prompt,cinema,exibirMenu)
                 break;
 
             case '5':
-                rl.close()
                 break;
 
             default:
@@ -42,18 +46,4 @@ function exibirMenu() {
                 break;
         }
     }
-}
-function cadastrar(){
-    if(cinema.length == 0){
-        console.log('nao ha nenhuma sessao cadastrada ainda')
-    }else{
-        let nomeFilme = prompt('digite o nome do filme: ')
-        let data = prompt('digite a data do filme: ')
-        let hora = prompt('digite a hora do filme: ')
-        let sala = prompt('digite a sala da sessão: ')
-        cinema.push(nomeFilme, data, hora)
-        console.log('sessão cadastrada com sucesso!')
-    }
-}
 
-module.exports = {cadastrar}
